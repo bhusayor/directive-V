@@ -1,0 +1,103 @@
+/* PROJECT ECLIPSE — one grounded, reversible infrastructure briefing. */
+.eclipse { position: relative; isolation: isolate; background: var(--void); }
+.briefing-shell[data-eclipse="true"] .status-dot { background: var(--signal-red); }
+.eclipse-entry { position: relative; min-height: 95svh; display: flex; align-items: center; overflow: hidden; }
+.eclipse-entry-art { position: absolute; inset: 0; opacity: .6; overflow: hidden; }
+.eclipse-ground-image img { object-position: 70% bottom; transform: scale(2.7); transform-origin: 70% bottom; animation: none !important; }
+.eclipse-entry-shade { position: absolute; inset: 0; background: linear-gradient(180deg,var(--void) 0%,transparent 38%,transparent 72%,var(--void)),linear-gradient(90deg,rgb(8 9 10 / 85%),rgb(8 9 10 / 12%) 85%); }
+.eclipse-entry-copy { position: relative; padding-block: 9rem 6rem; }
+.eclipse-transmission { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; color: var(--bone); }
+.eclipse-transmission > span:last-child { margin-left: auto; color: var(--ash); }
+.eclipse-signal { width: 5px; height: 5px; background: var(--signal-red); }
+.eclipse-entry h2 { font: 600 clamp(7rem,19vw,21rem)/.78 var(--font-display); letter-spacing: -.035em; margin-top: 5rem; }
+.eclipse-entry h2 > span { display: block; font-size: .27em; letter-spacing: .22em; line-height: 1.5; margin-bottom: .3em; }
+.eclipse-entry-bottom { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-top: 3.5rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.eclipse-entry-bottom > p { color: var(--ash); font-size: 1rem; }
+.eclipse-track { position: relative; }
+.eclipse-stage { position: absolute; inset: 0 0 auto; height: 100svh; overflow: hidden; pointer-events: none; }
+.eclipse-environment { position: absolute; inset: 0; opacity: .08; }
+.eclipse-network-visual { position: absolute; inset: 0; }
+.eclipse-canvas, .eclipse-schematic { width: 100%; height: 100%; position: absolute; inset: 0; }
+.eclipse-canvas { opacity: 0; transition: opacity 650ms; }
+.eclipse-schematic { opacity: .85; transition: opacity 650ms; }
+.eclipse-network-visual[data-renderer="ready"] .eclipse-canvas { opacity: 1; }
+.eclipse-network-visual[data-renderer="ready"] .eclipse-schematic { opacity: 0; }
+.eclipse-schematic [data-rank] { color: var(--ash); }
+.eclipse-schematic path { fill: none; stroke: currentColor; stroke-width: .8; }
+.eclipse-schematic g path { stroke-width: 1; }
+.eclipse-schematic rect { fill: currentColor; }
+.eclipse-vignette { position: absolute; inset: 0; background: linear-gradient(90deg,rgb(8 9 10 / 75%) 0%,transparent 65%),linear-gradient(0deg,var(--void),transparent 23%,transparent 85%,var(--void)); }
+.eclipse-stage-index { position: absolute; inset: auto var(--page-gutter) 2rem; display: flex; justify-content: space-between; gap: 1rem; font-size: .5625rem; letter-spacing: .13em; opacity: .65; }
+.eclipse-beats { position: relative; }
+.eclipse-beat { min-height: 100svh; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 1.5rem; align-content: center; padding-block: 8rem; }
+.eclipse-beat-copy { grid-column: 1 / 8; }
+.eclipse-kicker { margin-bottom: 2rem; font-size: .625rem; letter-spacing: .12em; }
+.eclipse-beat h3 { font: 600 clamp(4.5rem,7.8vw,8.5rem)/.9 var(--font-display); letter-spacing: -.025em; }
+.eclipse-beat em { font-style: normal; color: var(--ash); }
+.eclipse-body { margin-top: 2rem; color: var(--ash); font-size: clamp(.9375rem,1.2vw,1.0625rem); line-height: 1.8; }
+.eclipse-legend { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: .65rem 2rem; max-width: 25rem; font: .5625rem/1.5 var(--font-system); color: var(--ash); letter-spacing: .1em; }
+.eclipse-legend li::before { content: "+"; margin-right: .75rem; color: var(--bone); }
+.eclipse-alerts { list-style: none; padding: 0; margin: 2.5rem 0 0; max-width: 29rem; }
+.eclipse-alerts li { display: flex; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1rem; font: .6875rem/1.6 var(--font-system); letter-spacing: .05em; }
+.eclipse-alerts li > span { color: var(--signal-red); }
+.eclipse-node-count { margin-top: 1.5rem; }
+.eclipse-node-count > span { color: var(--signal-red); }
+.eclipse:not([data-enhanced="true"]) .eclipse-node-count { display: none; }
+.eclipse-revelation em { color: var(--signal-red); }
+.eclipse-activation { grid-column: 1 / 8; }
+.eclipse-activation h3 { font-size: clamp(6rem,12vw,13rem); }
+.eclipse-activation h3 > span { font-size: 1.4em; }
+.eclipse-fiction { margin-top: 1.75rem; font-size: .5625rem; max-width: 26rem; }
+.eclipse-orders { grid-column: 9 / -1; align-self: end; border-top: 1px solid var(--signal-red); padding-top: 1.5rem; }
+.eclipse-orders > p { font-size: .5625rem; }
+.eclipse-orders ol { list-style: none; padding: 0; margin: 1.5rem 0 0; font: 600 clamp(1.7rem,2.4vw,2.6rem)/1.2 var(--font-display); }
+.eclipse-orders li:last-child { margin-top: 1rem; color: var(--ash); }
+.eclipse-directive { position: relative; isolation: isolate; }
+.eclipse-directive::before { content: ""; position: absolute; z-index: -1; inset: 0 calc(-1 * var(--page-gutter)); background: linear-gradient(transparent,rgb(8 9 10 / 86%) 75%,var(--void)); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .eclipse[data-enhanced="true"] .eclipse-stage { position: sticky; top: 0; }
+  .eclipse[data-enhanced="true"] .eclipse-beats { margin-top: -100svh; }
+  .eclipse[data-enhanced="true"] .eclipse-alerts li { opacity: .3; transition: opacity 350ms, border-color 350ms; }
+  .eclipse[data-enhanced="true"]:is([data-phase="satellite"],[data-phase="defense"],[data-phase="grid"],[data-phase="revelation"],[data-phase="directive"]) [data-alert="0"],
+  .eclipse[data-enhanced="true"]:is([data-phase="defense"],[data-phase="grid"],[data-phase="revelation"],[data-phase="directive"]) [data-alert="1"],
+  .eclipse[data-enhanced="true"]:is([data-phase="grid"],[data-phase="revelation"],[data-phase="directive"]) [data-alert="2"] { opacity: 1; border-color: rgb(201 42 42 / 45%); }
+  .eclipse:is([data-phase="satellite"],[data-phase="defense"],[data-phase="grid"],[data-phase="revelation"],[data-phase="directive"]) .eclipse-schematic [data-rank="1"],
+  .eclipse:is([data-phase="defense"],[data-phase="grid"],[data-phase="revelation"],[data-phase="directive"]) .eclipse-schematic [data-rank="2"],
+  .eclipse:is([data-phase="grid"],[data-phase="revelation"],[data-phase="directive"]) .eclipse-schematic [data-rank="3"] { color: var(--signal-red); }
+  .eclipse-schematic [data-rank] { transition: color 400ms; }
+}
+@media (max-width: 1099px) {
+  .eclipse-beat-copy { grid-column: 1 / 10; }
+  .eclipse-activation { grid-column: 1 / -1; }
+  .eclipse-orders { grid-column: 5 / -1; margin-top: 3rem; }
+  .eclipse-schematic { width: 145%; left: -15%; }
+}
+@media (max-width: 720px) {
+  .eclipse-entry { min-height: 46rem; }
+  .eclipse-entry-art { inset: 8rem 0 0; }
+  .eclipse-ground-image img { object-fit: cover; object-position: 65% bottom; transform: scale(1.8); transform-origin: 65% bottom; }
+  .eclipse-entry-copy { padding-block: 7rem 5rem; }
+  .eclipse-transmission { font-size: .5625rem; }
+  .eclipse-transmission > span:last-child { flex-basis: 100%; margin-left: 1rem; }
+  .eclipse-entry h2 { font-size: clamp(6.2rem,25vw,11rem); margin-top: 8rem; }
+  .eclipse-entry-bottom { display: block; margin-top: 2rem; }
+  .eclipse-entry-bottom > a { margin-top: 1.5rem; font-size: .625rem; }
+  .eclipse-beat { min-height: 90svh; grid-template-columns: 1fr; gap: 0; padding-block: 7rem 5rem; }
+  .eclipse-beat-copy, .eclipse-activation, .eclipse-orders { grid-column: 1; }
+  .eclipse-beat h3 { font-size: clamp(3.3rem,13vw,6rem); }
+  .eclipse-kicker { font-size: .5rem; margin-bottom: 1.5rem; }
+  .eclipse-schematic { width: 175%; height: 80%; left: -60%; top: 18%; opacity: .6; }
+  .eclipse-vignette { background: linear-gradient(0deg,var(--void),transparent 20%,rgb(8 9 10 / 30%) 70%,var(--void)); }
+  .eclipse-stage-index { font-size: .4375rem; bottom: 1.5rem; }
+  .eclipse-stage-index span:last-child { max-width: 8rem; text-align: right; }
+  .eclipse-alerts li { font-size: .5625rem; gap: .6rem; }
+  .eclipse-node-count { font-size: .5625rem; }
+  .eclipse-legend { font-size: .5rem; gap: .7rem; }
+  .eclipse-activation h3 { font-size: 21vw; }
+  .eclipse-orders { margin-top: 3rem; }
+  .eclipse-orders ol { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eclipse-canvas, .eclipse-schematic, .eclipse-schematic * { transition: none; }
+}
